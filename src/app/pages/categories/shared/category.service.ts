@@ -1,7 +1,6 @@
 import { Category } from './category.model';
 import { Injectable, Injector } from '@angular/core';
 import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class CategoryService extends BaseResourceService<Category> {
 
   constructor(protected injector: Injector) { 
-    super("api/categories", injector);
+    super("api/categories", injector, Category.fromJson);
   }
 }
